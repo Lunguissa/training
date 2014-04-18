@@ -199,7 +199,10 @@ public class ConexaoBD
 			fis.close();
 			ois.close();
 	}
-	
+	/**
+	 * 
+	 * Metodo que ira actualizar informacao na base de dados
+	 */
 	public static void actualizarBD(Mesa voto)
 	{
 		try 
