@@ -38,7 +38,7 @@ public class ConexaoBD
 	 * 
 	 * Metodo que ira retornar um vector contendo os elementos pesquisados na Base de dados 
 	 */
-	public static Vector consultaBD(){
+	public static Vector<Mesa> consultaBD(){
 	mesas=new Vector();
 	Thread n= new Thread();
     for (int i=0; i<3000;i++)
@@ -63,13 +63,13 @@ public class ConexaoBD
 	Statement stm = (Statement) conn.createStatement();
 	ResultSet rs = (ResultSet) stm.executeQuery(teste);
 	while (rs.next()) {
-		
+	int id=rs.getInt("id");
 	String provincia = rs.getString("Provincia");
 	String distrito= rs.getString("Distrito");
 	String localidade = rs.getString("Localidade");
 	int voto = rs.getInt("Voto");
 	
-	mesas.add(new Mesa(provincia, distrito, localidade, voto));
+	mesas.add(new Mesa(id,provincia, distrito, localidade, voto));
 	}
 	
 	} catch(ClassNotFoundException e) {
@@ -100,7 +100,7 @@ public class ConexaoBD
 		{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con =(Connection) DriverManager.getConnection("jdbc:mysql://localhost/eleicoes","root", "benfica");
-			PreparedStatement stmt = (PreparedStatement) con.prepareStatement("insert into mesavoto (Provincia,Distrito,Localidade,voto) values (?,?,?,?)");
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement("insert into mesavoto (Provincia,Distrito,Localidade,Voto) values (?,?,?,?)");
 			    Thread n= new Thread();
 			    for (int i=0; i<5000;i++)
 			    {	if(i==1000){
@@ -198,6 +198,35 @@ public class ConexaoBD
 			provincias = (Vector<Mesa>) ois.readObject();
 			fis.close();
 			ois.close();
+	}
+	
+	public static void actualizarBD(Mesa voto)
+	{
+		try 
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con =(Connection) DriverManager.getConnection("jdbc:mysql://localhost/eleicoes","root", "benfica");
+			PreparedStatement stmt = (PreparedStatement) con.prepareStatement("UPDATE mesavoto SET Voto = ? WHERE id = ?");
+			   
+			 // preenche os valores
+				stmt.setInt(1,voto.getVotos());
+				stmt.setInt(2,voto.getId());
+				
+				// executa
+				stmt.execute();
+				stmt.close();
+				System.out.println("Voto efectuado com Sucesso!!");
+				System.out.println("O seu Voto faz a diferenca!!");
+				con.close();
+		} 
+		catch (ClassNotFoundException e) 
+		{
+			System.out.println("Falha na Conexao a Base de dados SQL");
+		} 
+		catch (SQLException e) 
+		{	System.out.println(e.getMessage());
+			System.out.println("Falha no servidor");
+		}
 	}
 	
 	public static Vector preencheNomes()

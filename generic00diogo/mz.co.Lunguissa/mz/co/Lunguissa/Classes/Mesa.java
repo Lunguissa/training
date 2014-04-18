@@ -10,7 +10,7 @@ public class Mesa {
 	private String provincia;
 	private String distrito;
 	private String localidade;
-	private int votos;
+	private int votos,id;
 	
 	
 	/**
@@ -22,12 +22,25 @@ public class Mesa {
 	 * @param votos - Numero total de Votos da Mesa de Voto
 	 */
 	
-	public Mesa(String provincia, String distrito, String localidade, int votos) {
+	public Mesa(int id,String provincia, String distrito, String localidade, int votos) {
 		super();
+		this.id=id;
 		this.provincia = provincia;
 		this.distrito = distrito;
 		this.localidade = localidade;
 		this.votos = votos;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 

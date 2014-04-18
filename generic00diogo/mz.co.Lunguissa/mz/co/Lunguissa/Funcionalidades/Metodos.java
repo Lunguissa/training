@@ -42,7 +42,8 @@ public class Metodos {
 		System.out.print("Insira a quantidade de votos da mesa: ");
 		voto=input.nextInt();
 		}
-		Mesa novo =new Mesa(provincia, distrito, localidade, voto);
+
+		Mesa novo =new Mesa(0,provincia, distrito, localidade, voto);
 		Vector <Mesa> aux =ConexaoBD.consultaBD();
 		boolean apanhou = false;
 		for (int i = 0; i < aux.size(); i++) {
@@ -324,8 +325,18 @@ public class Metodos {
 	 */
 	public static void votar()
 	{
-		Mesa votos = new Mesa(provincia, distrito, localidade, voto);
-		ConexaoBD.inserirBD(votos);
+		Mesa votos = new Mesa(0,provincia, distrito, localidade, voto);
+		
+		for(int i=0;i<ConexaoBD.provincias.size();i++)
+		{
+			
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase(votos.getProvincia())&&ConexaoBD.provincias.get(i).getDistrito().equalsIgnoreCase(votos.getDistrito())&&ConexaoBD.provincias.get(i).getLocalidade().equalsIgnoreCase(votos.getLocalidade()))
+			{	votos=ConexaoBD.provincias.get(i);
+				votos.setVotos(ConexaoBD.provincias.get(i).getVotos()+1);
+				break;
+			}
+		}
+		ConexaoBD.actualizarBD(votos);
 		ConexaoBD.provincias=ConexaoBD.consultaBD();
 	}
 	
@@ -335,7 +346,7 @@ public class Metodos {
 	public static void TotalDeVotos()
 	{
 		
-		Vector <Mesa> votos =ConexaoBD.consultaBD();
+		ConexaoBD.provincias=ConexaoBD.consultaBD();
 		int totalMaputo=0;
 		int totalCabo=0;
 		int totalInh=0;
@@ -349,52 +360,52 @@ public class Metodos {
 		int totalManica=0;
 		int total=0;
 		
-		for(int i=0;i<votos.size();i++)
+		for(int i=0;i<ConexaoBD.provincias.size();i++)
 		{
 			
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Maputo"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Maputo"))
 			{
-				totalMaputo=totalMaputo+votos.get(i).getVotos();
+				totalMaputo=totalMaputo+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Cabo Delgado"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Cabo Delgado"))
 			{
-				totalCabo=totalCabo+votos.get(i).getVotos();
+				totalCabo=totalCabo+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Inhambane"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Inhambane"))
 			{
-				totalInh=totalInh+votos.get(i).getVotos();
+				totalInh=totalInh+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Nampula"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Nampula"))
 			{
-				totalNamp=totalNamp+votos.get(i).getVotos();
+				totalNamp=totalNamp+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Maputo Cidade"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Maputo Cidade"))
 			{
-				totalMapuC=totalMapuC+votos.get(i).getVotos();
+				totalMapuC=totalMapuC+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Tete"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Tete"))
 			{
-				totalTete=totalTete+votos.get(i).getVotos();
+				totalTete=totalTete+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Sofala"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Sofala"))
 			{
-				totalSofala=totalSofala+votos.get(i).getVotos();
+				totalSofala=totalSofala+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Zambezia"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Zambezia"))
 			{
-				totalZam=totalZam+votos.get(i).getVotos();
+				totalZam=totalZam+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Manica"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Manica"))
 			{
-				totalManica=totalManica+votos.get(i).getVotos();
+				totalManica=totalManica+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Gaza"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Gaza"))
 			{
-				totalGaza=totalGaza+votos.get(i).getVotos();
+				totalGaza=totalGaza+ConexaoBD.provincias.get(i).getVotos();
 			}
-			if(votos.get(i).getProvincia().equalsIgnoreCase("Niassa"))
+			if(ConexaoBD.provincias.get(i).getProvincia().equalsIgnoreCase("Niassa"))
 			{
-				totalNiassa=totalNiassa+votos.get(i).getVotos();
+				totalNiassa=totalNiassa+ConexaoBD.provincias.get(i).getVotos();
 			}
 		}
 		
