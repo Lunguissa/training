@@ -1,0 +1,30 @@
+Gym task
+
+Intranet em Zk ( FOA app – Diogo e Tassio)
+A intranet deve visualmente ser o mais similar possível ao website abaixo:
+http://www.bodybuilding.com/
+Devem copiar cores, fontes, usar logotipo deles tudo e mais alguma coisa para ficar o mais similar possível.
+A intranet deve ter 3 paginas, home, alterar campanha e adicionar dicas.
+Uma campanha é cosposta resumidamente por uma imagem de preferência gif (podem trabalhar com um gif qualquer não precisa de ser um relacionado).
+As dicas são dicas para gymar e são compostas por titulo e descricacao.
+Na home page deve visualizar se a actual campanha e as duas dicas mais recentes.
+
+App de gestão de clientes (BOA app – Haider, Hasler e Rui)
+
+A app de gestão de clientes deve ter 3 cruds.
+Um para funcionários, outro para horários e o final para material.
+
+CRUD d funcionários.
+ Um funcionário tem os seguintes atributos:
+Nome, apelido, numero de cel (so números mesmo), date de nascimento, sexo, e experiencia de ginásio (pouca, media, alta).
+Na listagem de funcionários deve ser possível filtrar de acordo com sexo e experiencia. Ex: visualizar so mulheres.
+
+CRUD de horários
+Um horário tem os seguintes atributos:
+Titulo, data de entrada e data de saída. Deve se fazer duas verificações a nível de horarios, primeiro ele deve ter a duração de 1 hora a 3 horas, 
+não podem existir horarios de 30 min ou de 3h30 min. Segundo eles não devem sobrepor-se por exemplo não podemos ter um horário das 12h -14h e outro das 13h-15h.
+
+CRUD de material
+Quanto ao crud d material, o material tem os seguintes atributos:
+Nome, descrição, quantidade, categoria.
+Na criação de material deve haver a possibilidade de criar um categoria ou usar as já existentes e nota ao sair se da janela e voltar se a categoria criada anteriormente deve aparecer.
