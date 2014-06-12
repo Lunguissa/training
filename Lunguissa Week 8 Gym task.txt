@@ -41,5 +41,7 @@ Se ate o deadline o projecto nao tiver criado os responsaveis automaticamente ga
 2 - Ate 6f as 22h, domingo as 22h e segunda feira as 22h quero updates nos issues, 
 nem que seja pra escrever nao fiz nada, no entanto a qualidade dos comments tambem sera avaliada entao escrevam comentarios 
 de qualidade, e NOTA qualidade nao quantidade.
+Quem nao colocar os updates vai perder 1 QRIMP! O que significa perder um QRIMP, significa perder um ponto em qualidade, 
+um em regras, um em inovacao, um em metas e um em prazos.
 
 3 - O projecto deve estar completo e entregue ate terca-feira as 22h.
