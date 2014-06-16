@@ -3,5 +3,4 @@
 
 <label value="You are using: ${desktop.webApp.version}"/>
 
-!!!!!
 </window>
