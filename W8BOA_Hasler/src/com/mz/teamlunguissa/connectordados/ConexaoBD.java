@@ -318,7 +318,7 @@ public class ConexaoBD {
 		return dados;
 	}
 
-	public void removeHorarios(int id) {
+	public static void removeHorarios(int id) {
 		conectar();
 		PreparedStatement stmt;
 		try {

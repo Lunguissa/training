@@ -30,8 +30,8 @@
 	</grid>
 
 	<hbox>
-		<listbox id="horario" emptyMessage="Sem Horarios"
-			height="*" width="100%"  style="margin-top:10px">
+		<listbox id="horario" emptyMessage="Sem Horarios" height="*"
+			width="100%" style="margin-top:10px">
 			<listhead>
 				<listheader label="Titulo" />
 				<listheader label="Horas De entrada" />
