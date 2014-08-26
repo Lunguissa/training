@@ -1,0 +1,49 @@
+<?page title="Auto Generated index.zul"?>
+<window title="GYM">
+
+	<hbox>
+		<button label="Registar Horario" />
+		<button label="Editar Horario" />
+		<button label="Remover" />
+		<button label="Refresh da Lista" />
+	</hbox>
+	<vbox height="10%" />
+	<grid>
+		<rows>
+			<row>
+				Titulo
+				<textbox id="lbTitulo"
+					constraint="no empty: Introduzir titulo" />
+			</row>
+
+			<row>
+				Hora de Entrada
+				<intbox id="ibEntrada" format="00:00"
+					constraint="no empty,no negative : introduzir horas validas" />
+			</row>
+			<row>
+				Hora de Saida
+				<intbox id="ibSaida" format="00:00"
+					constraint="no empty,no negative :introduzir horas validas" />
+			</row>
+		</rows>
+	</grid>
+
+	<hbox>
+		<listbox id="horario" emptyMessage="Sem Horarios" height="*"
+			width="100%" style="margin-top:10px">
+			<listhead>
+				<listheader label="Titulo" />
+				<listheader label="Horas De entrada" />
+				<listheader label="Numero de celular" />
+			</listhead>
+			<template name="model">
+				<listitem>
+					<listcell label="${each.titulo}"></listcell>
+					<listcell label="${each.horaEntrada}"></listcell>
+					<listcell label="${each.horaSaida}"></listcell>
+				</listitem>
+			</template>
+		</listbox>
+	</hbox>
+</window>
