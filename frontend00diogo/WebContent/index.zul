@@ -1,0 +1,52 @@
+<?page title="Registro de Mesa de Voto"?>
+
+<zk>
+
+
+<window apply="mz.co.Lunguissa.Controler.Controlador" title="" id="Jvoto"  border="3d" width="600px" height="500px"  style="background-image:url(voto.jpg)" position="center" mode="overlapped" closable="true" defaultActionOnShow="appear" minimizable="true">
+
+<style>
+			body { 
+			padding: 0 0; background-color: #EBEBEB;
+			background-image:url(wallpaper.jpg);
+			}
+			
+			
+		</style>
+<div >
+
+<box height="600px" width="600px" style="color:black;background-color:gray; font-size:50px ;color:white; font-family:Comic Sans MS , cursive">
+
+<hbox spacing="50px">
+
+<label value="Provincia :"  width="50px" height="50px" style="font-size:30px ;color:white; font-family:Comic Sans MS , cursive" ></label>
+<textbox id="txtProvincia" maxlength="200" width="300px" height="52px" style="color:black;background-color:gray; font-size:20px ;color:white; font-family:Comic Sans MS , cursive"> </textbox>
+</hbox>
+<hbox spacing="64px">
+
+<label value="Distrito :"  width="50px" height="50px" style="font-size:30px ;color:white; font-family:Comic Sans MS , cursive" ></label>
+<textbox id="txtDistrito" maxlength="200" width="300px" height="52px" style="color:black;background-color:gray; font-size:20px ;color:white; font-family:Comic Sans MS , cursive"> </textbox>
+</hbox>
+<hbox spacing="30px">
+
+<label value="Localidade :"  width="50px" height="50px" style="font-size:30px ;color:white; font-family:Comic Sans MS , cursive" ></label>
+<textbox id="txtLocalidade" maxlength="200" width="300px" height="52px" style="color:black;background-color:gray; font-size:20px ;color:white; font-family:Comic Sans MS , cursive"> </textbox>
+</hbox>
+<hbox spacing="95px">
+
+<label value="Votos :"  width="50px" height="50px" style="font-size:30px ;color:white; font-family:Comic Sans MS , cursive" ></label>
+<textbox  id="txtVotos" maxlength="200" width="300px" height="52px" style="color:black;background-color:gray; font-size:20px ;color:white; font-family:Comic Sans MS , cursive"> </textbox>
+</hbox>
+<hbox spacing="220px" align="right">
+ <label value=" ." style="color:black;background-color:gray"></label>
+ <button popup="msg" id="btnSalvar" label="Salvar" width="200px" height="52px" style="color:black;background-color:gray; font-size:40px ;color:blue; font-family:Comic Sans MS , cursive"></button>
+
+</hbox>
+
+</box>
+	
+</div>
+
+</window>
+
+</zk>

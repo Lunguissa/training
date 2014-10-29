@@ -1,0 +1,22 @@
+<?page title="Auto Generated index.zul"?>
+<window title="GYM">
+<tabbox id="tb" height="100%">
+    <tabs id="tabs">
+        <tab id="A" label="Funcionario" />
+        <tab id="B" label="Horario" />
+        <tab id="C" label="Material" />
+
+    </tabs>
+    <tabpanels height="100%" width="100%">
+        <tabpanel>
+        	<include id="funcionario" src="funcionario.zul"/>
+        </tabpanel>
+        <tabpanel>
+        	<include id="horario" src="horarios.zul"/>
+        </tabpanel>
+        <tabpanel>
+        	<include id="material" src="material.zul"/>
+        </tabpanel>
+    </tabpanels>
+</tabbox>
+</window>

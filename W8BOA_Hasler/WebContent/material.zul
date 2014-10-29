@@ -1,0 +1,62 @@
+<?page title="Auto Generated index.zul"?>
+<window>
+	<hbox>
+		<button label="Registar Material" />
+		<button label="Editar Material" />
+		<button label="Remover Material" />
+		<button label="Refresh da Lista" />
+	</hbox>
+	<hbox height="10%" />
+	<grid>
+		<rows>
+			<row>
+				Nome:
+				<textbox id="lbNome"
+					constraint="no empty: Introduzir nome" />
+			</row>
+
+			<row>
+				Descricao:
+				<textbox id="lbDescricao"
+					constraint="no empty: Introduzir apelido" />
+			</row>
+
+			<row>
+				Quantidade
+				<intbox id="ibQuantidade"
+					constraint="no empty,no negative : introduzir um numero" />
+			</row>
+
+			<row>
+				Categoria:
+				<combobox id="cbCategoria" autodrop="true">
+					<template name="model">
+						<comboitem label="${each}" />
+					</template>
+				</combobox>
+			</row>
+		</rows>
+	</grid>
+
+	<hbox>
+		<listbox id="material" emptyMessage="Sem Material"
+			height="*%" width="100%" style="margin-top:10px">
+			<listhead>
+				<listheader label="Nome" />
+				<listheader label="Descricao" />
+				<listheader label="Quantidade" />
+				<listheader label="Categoria" />
+
+			</listhead>
+			<template name="model">
+				<listitem>
+					<listcell label="${each.nome}"></listcell>
+					<listcell label="${each.descricao}"></listcell>
+					<listcell label="${each.quantidade}"></listcell>
+					<listcell label="${each.categoria}"></listcell>
+				</listitem>
+			</template>
+		</listbox>
+	</hbox>
+
+</window>
